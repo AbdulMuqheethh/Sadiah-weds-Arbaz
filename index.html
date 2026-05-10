@@ -3,220 +3,180 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sadia & Arbaz — 4th June 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500&family=Raleway:wght@200;300;400&display=swap" rel="stylesheet"/>
+<title>Sadia & Arbaz - 4th June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;500;600&family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --owl:#C4C1B8; --mist:#635B51; --crimson:#551F22;
-  --crimson2:#7a2428; --seal:#301415; --nuln:#130F0D;
-  --gold:#B89A6A; --gold-lt:#D4B98A;
+  --crimson:#551F22; --crimson2:#7a2428; --seal:#301415;
+  --nuln:#130F0D; --gold:#B89A6A; --gold-lt:#D4B98A;
+  --owl:#e8e5e0; --mist:#c8c2bb;
 }
 html{scroll-behavior:smooth}
 body{background:var(--nuln);color:var(--owl);font-family:'Cormorant Garamond',serif;overflow-x:hidden}
-
-/* ── PETALS ── */
 #particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-.petal{position:absolute;top:-10px;border-radius:50% 0 50% 0;opacity:0;animation:petalFall linear infinite;will-change:transform,opacity}
+.petal{position:absolute;top:-20px;opacity:0;animation:petalFall linear infinite;will-change:transform}
 @keyframes petalFall{
-  0%  {transform:translateY(0) translateX(0) rotate(0deg) scale(1);opacity:.7}
-  25% {transform:translateY(25vh) translateX(30px) rotate(180deg) scale(.9);opacity:.5}
-  50% {transform:translateY(50vh) translateX(-20px) rotate(360deg) scale(.8);opacity:.4}
-  75% {transform:translateY(75vh) translateX(25px) rotate(540deg) scale(.7);opacity:.2}
-  100%{transform:translateY(115vh) translateX(-10px) rotate(720deg) scale(.5);opacity:0}
+  0%{opacity:.8;transform:translateY(0) translateX(0) rotate(0deg)}
+  25%{opacity:.6;transform:translateY(25vh) translateX(40px) rotate(200deg)}
+  50%{opacity:.4;transform:translateY(55vh) translateX(-30px) rotate(400deg)}
+  75%{opacity:.2;transform:translateY(80vh) translateX(20px) rotate(600deg)}
+  100%{opacity:0;transform:translateY(115vh) translateX(-15px) rotate(720deg)}
 }
-
-/* ── CONFETTI (party popper) ── */
 #confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:999;display:none}
-#party-overlay{
-  position:fixed;inset:0;z-index:998;
-  display:none;flex-direction:column;align-items:center;justify-content:center;
-  background:rgba(19,15,13,.92);
-  text-align:center;padding:2rem;
-}
+#party-overlay{position:fixed;inset:0;z-index:998;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(13,8,8,.95);text-align:center;padding:2rem}
 #party-overlay.show{display:flex}
-.party-emoji{font-size:5rem;animation:popIn .5s cubic-bezier(.34,1.56,.64,1) both}
+.party-emoji{font-size:5rem;animation:popIn .6s cubic-bezier(.34,1.56,.64,1) both}
 @keyframes popIn{from{transform:scale(0) rotate(-20deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
-.party-title{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(2.2rem,8vw,4rem);font-weight:300;
-  color:var(--gold-lt);margin-top:1.2rem;line-height:1.2;
-  animation:riseIn .8s .3s both;
-}
-.party-sub{
-  font-family:'Raleway',sans-serif;font-weight:300;
-  font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;
-  color:#b0a898;margin-top:1rem;
-  animation:riseIn .8s .5s both;
-}
-.party-close{
-  margin-top:2.5rem;
-  font-family:'Raleway',sans-serif;font-weight:300;font-size:.6rem;
-  letter-spacing:.35em;text-transform:uppercase;
-  color:var(--gold);border:1px solid var(--gold);
-  background:transparent;padding:.9rem 2rem;cursor:pointer;
-  animation:riseIn .8s .7s both;
-  transition:background .3s,color .3s;
-}
-.party-close:hover{background:var(--crimson);color:var(--owl);border-color:var(--crimson)}
-
-/* ── ENVELOPE ── */
-#envelope-screen{
-  position:fixed;inset:0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
-  background:radial-gradient(ellipse at 50% 55%,#2a0d0f 0%,var(--nuln) 70%);
-  z-index:300;transition:opacity 1.2s cubic-bezier(.4,0,.2,1),visibility 1.2s;
-}
+.party-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(2.4rem,8vw,4.5rem);font-weight:300;color:var(--gold-lt);margin-top:1.2rem;line-height:1.2;animation:riseIn .8s .3s both}
+.party-sub{font-family:'Raleway',sans-serif;font-weight:400;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mist);margin-top:1rem;animation:riseIn .8s .5s both}
+.party-close{margin-top:2.5rem;font-family:'Raleway',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-lt);border:2px solid var(--gold-lt);background:transparent;padding:1rem 2.4rem;cursor:pointer;animation:riseIn .8s .7s both;transition:all .3s}
+.party-close:hover{background:var(--crimson);border-color:var(--crimson);color:#fff}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+#envelope-screen{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;background:radial-gradient(ellipse at 50% 55%,#2a0d0f 0%,var(--nuln) 70%);z-index:300;transition:opacity 1.2s ease,visibility 1.2s}
 #envelope-screen.gone{opacity:0;visibility:hidden;pointer-events:none}
-.env-label{font-family:'Raleway',sans-serif;font-weight:400;letter-spacing:.2em;font-size:1rem;color:#b0a898;text-transform:uppercase;animation:riseIn 1.4s .1s both}
-.envelope-wrap{perspective:800px;animation:riseIn 1.4s .3s both}
-.envelope{width:300px;height:200px;position:relative;cursor:pointer;transform-style:preserve-3d;filter:drop-shadow(0 20px 50px rgba(85,31,34,.55));transition:transform .35s ease,filter .35s ease}
-.envelope:hover{transform:translateY(-8px) scale(1.03);filter:drop-shadow(0 30px 70px rgba(85,31,34,.85))}
-.env-body{position:absolute;inset:0;background:linear-gradient(150deg,#3c1719 0%,var(--seal) 100%);border-radius:3px 3px 10px 10px;border:1px solid rgba(180,140,100,.2);overflow:hidden}
-.env-body::after{content:'';position:absolute;bottom:0;left:0;right:0;height:55%;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.28))}
-.env-left{position:absolute;bottom:0;left:0;width:0;height:0;border-bottom:100px solid rgba(0,0,0,.18);border-right:150px solid transparent}
-.env-right{position:absolute;bottom:0;right:0;width:0;height:0;border-bottom:100px solid rgba(0,0,0,.18);border-left:150px solid transparent}
+.env-label{font-family:'Raleway',sans-serif;font-weight:400;letter-spacing:.2em;font-size:1rem;color:var(--mist);text-transform:uppercase;animation:riseIn 1.4s .1s both;text-align:center;padding:0 1rem}
+.envelope-wrap{perspective:900px;animation:riseIn 1.4s .3s both}
+.envelope{width:300px;height:200px;position:relative;cursor:pointer;transform-style:preserve-3d;filter:drop-shadow(0 20px 50px rgba(85,31,34,.6));transition:transform .35s ease,filter .35s ease}
+.envelope:hover{transform:translateY(-10px) scale(1.04);filter:drop-shadow(0 30px 80px rgba(85,31,34,.95))}
+.env-body{position:absolute;inset:0;background:linear-gradient(150deg,#3c1719 0%,var(--seal) 100%);border-radius:3px 3px 10px 10px;border:1px solid rgba(180,140,100,.25)}
+.env-left{position:absolute;bottom:0;left:0;width:0;height:0;border-bottom:100px solid rgba(0,0,0,.2);border-right:150px solid transparent}
+.env-right{position:absolute;bottom:0;right:0;width:0;height:0;border-bottom:100px solid rgba(0,0,0,.2);border-left:150px solid transparent}
 .env-flap{position:absolute;top:0;left:0;width:0;height:0;border-left:150px solid transparent;border-right:150px solid transparent;border-top:105px solid #521e21;transform-origin:top center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.4,0,.2,1);z-index:5;filter:drop-shadow(0 5px 8px rgba(0,0,0,.45))}
 .envelope.open .env-flap{transform:rotateX(-180deg)}
 .env-letter{position:absolute;bottom:0;left:10px;right:10px;height:80%;background:linear-gradient(160deg,#f5ece0,#e8d8c0);border-radius:2px;z-index:2;transform:translateY(100%);transition:transform .8s .6s cubic-bezier(.34,1.4,.64,1);display:flex;align-items:center;justify-content:center}
-.env-letter span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:#3a1a10;letter-spacing:.15em;opacity:.7}
+.env-letter span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:#3a1a10;letter-spacing:.2em;opacity:.7}
 .envelope.open .env-letter{transform:translateY(-18%)}
-.env-seal{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;background:radial-gradient(circle at 35% 35%,#8a2a2e,var(--crimson));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.35rem;box-shadow:0 3px 14px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.1);z-index:6;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .4s}
+.env-seal{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;background:radial-gradient(circle at 35% 35%,#8a2a2e,var(--crimson));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 3px 14px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.1);z-index:6;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .4s}
 .envelope.open .env-seal{transform:translate(-50%,-50%) scale(0);opacity:0}
-.env-cta{font-family:'Raleway',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;animation:breathe 2.4s ease-in-out infinite,riseIn 1.4s .6s both}
-@keyframes breathe{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
-@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-
-/* ── MAIN INVITE ── */
-#invite{min-height:100vh;opacity:0;transition:opacity 1.4s ease;position:relative;z-index:2}
-#invite.visible{opacity:1}
-
-/* ── HERO ── */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:6rem 2rem 8rem;position:relative;
-  background:radial-gradient(ellipse at 50% 20%,#2d0e10 0%,transparent 60%),radial-gradient(ellipse at 20% 90%,rgba(85,31,34,.2) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(85,31,34,.12) 0%,transparent 50%),var(--nuln);
-  overflow:hidden;width:100%;
-}
-.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(-45deg,transparent 0px,transparent 60px,rgba(180,140,100,.015) 60px,rgba(180,140,100,.015) 61px)}
-
-.hero-ornament{font-size:1.2rem;color:var(--gold);letter-spacing:.4em;margin-bottom:2rem;opacity:0;text-align:center;width:100%;animation:ornamentIn 1.2s .5s forwards}
-@keyframes ornamentIn{from{opacity:0;letter-spacing:1em;transform:scaleX(1.1)}to{opacity:1;letter-spacing:.4em;transform:scaleX(1)}}
-
-.hero-pre{font-family:'Raleway',sans-serif;font-weight:400;font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:#b0a898;margin-bottom:2.2rem;text-align:center;width:100%;opacity:0;animation:riseIn 1s .8s both}
-
-.hero-names{font-family:'Cormorant Garamond',serif;font-size:clamp(4.5rem,16vw,8.5rem);font-weight:300;line-height:1.05;color:#e8e5e0;text-align:center;width:100%;display:flex;flex-direction:column;align-items:center;opacity:0;animation:namesReveal 1.4s 1s both}
-@keyframes namesReveal{0%{opacity:0;transform:translateY(30px) skewY(2deg)}60%{opacity:1}100%{opacity:1;transform:translateY(0) skewY(0)}}
-.hero-names em{font-style:italic;color:var(--gold-lt);display:block;text-align:center}
-
-.ampersand{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(2.5rem,7vw,4rem);color:#c46060;margin:.2em 0;font-weight:400;text-align:center;animation:ampIn 1s 1.4s both}
-@keyframes ampIn{from{opacity:0;transform:scale(.6) rotate(-10deg)}to{opacity:1;transform:scale(1) rotate(0deg)}}
-
-.hero-divider{width:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:2rem auto;animation:expandLine .9s 1.8s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes expandLine{to{width:140px}}
-
-.hero-date{font-family:'Cinzel',serif;font-size:clamp(1rem,3vw,1.3rem);letter-spacing:.15em;color:#d4b98a;text-align:center;width:100%;opacity:0;animation:riseIn 1s 2.1s both;font-weight:500}
-.hero-sub{font-style:italic;font-size:1.4rem;color:#b0a898;margin-top:.7rem;text-align:center;width:100%;opacity:0;animation:riseIn 1s 2.3s both}
-
-/* ── SCROLL HINT ── */
-.scroll-hint{
-  position:absolute;bottom:2.2rem;left:0;right:0;
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  opacity:0;animation:riseIn 1s 2.8s both;pointer-events:none;
-}
-.scroll-hint span{font-family:'Raleway',sans-serif;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:#b0a898;font-weight:400}
-.scroll-chevron{display:flex;flex-direction:column;gap:3px;align-items:center}
-.scroll-chevron i{display:block;width:12px;height:12px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:rotate(45deg);animation:chevronDrop 1.6s ease-in-out infinite;opacity:0}
-.scroll-chevron i:nth-child(1){animation-delay:0s}
-.scroll-chevron i:nth-child(2){animation-delay:.2s}
-.scroll-chevron i:nth-child(3){animation-delay:.4s}
-@keyframes chevronDrop{0%{opacity:0;transform:rotate(45deg) translate(-4px,-4px)}50%{opacity:1}100%{opacity:0;transform:rotate(45deg) translate(4px,4px)}}
-
-/* ── BAND ── */
-.band{background:var(--crimson);padding:1.3rem;text-align:center;position:relative;overflow:hidden}
-.band::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);animation:bandShimmer 3.5s ease-in-out infinite}
-@keyframes bandShimmer{to{left:160%}}
-.band-text{font-family:'Cinzel',serif;font-size:clamp(.9rem,2.5vw,1.1rem);letter-spacing:.2em;color:#ffffff;text-transform:uppercase;position:relative;z-index:1;font-weight:500}
-
-/* ── SECTIONS ── */
-section{padding:5.5rem 2rem;width:100%;max-width:680px;margin:0 auto;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center}
-.section-tag{font-family:'Raleway',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;color:#e0888d;margin-bottom:1.4rem;display:block;text-align:center;width:100%}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6vw,3.6rem);font-weight:400;color:#e8e5e0;margin-bottom:1.4rem;line-height:1.2;text-align:center;width:100%}
-.section-title em{color:var(--gold-lt);font-style:italic}
-.divider{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:0 auto 2rem;flex-shrink:0}
-.body-text{font-size:1.35rem;font-weight:400;line-height:2.1;color:#d0cac3;font-style:italic;text-align:center;width:100%;max-width:520px}
-
-/* ── DETAILS ── */
-.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(180,140,100,.15);border:1px solid rgba(180,140,100,.15);overflow:hidden;margin-top:2.5rem;width:100%}
-.detail-card{background:var(--seal);padding:2.2rem 1.5rem;text-align:center;transition:background .35s ease;position:relative;overflow:hidden}
-.detail-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(85,31,34,.3),transparent 70%);opacity:0;transition:opacity .4s}
-.detail-card:hover{background:#3d1a1c}
-.detail-card:hover::before{opacity:1}
-.detail-icon{font-size:2rem;margin-bottom:.9rem;display:block}
-.detail-label{font-family:'Raleway',sans-serif;font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;color:#e8909560;margin-bottom:.7rem;display:block;font-weight:700;color:#e89095}
-.detail-value{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;color:#e8e5e0;line-height:1.6}
-.map-link{display:block;margin-top:1.2rem;font-family:'Raleway',sans-serif;font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;text-decoration:none;background:var(--crimson);padding:.8rem 1.5rem;border-radius:2px;transition:background .3s;font-weight:600}
-.map-link:hover{background:#7a2428}
-
-/* ── COUNTDOWN ── */
-.countdown-wrap{background:var(--seal);border:1px solid rgba(180,140,100,.15);padding:3rem 2rem;margin-top:2rem;position:relative;overflow:hidden;width:100%}
-.countdown-wrap::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:200px;height:80px;background:radial-gradient(ellipse,rgba(85,31,34,.35),transparent 70%);pointer-events:none}
-.countdown-grid{display:flex;justify-content:center;align-items:center;gap:0;margin-top:1.5rem;flex-wrap:nowrap}
-.cd-block{text-align:center;width:72px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.6rem}
-.cd-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:400;color:var(--gold-lt);line-height:1;display:block;min-width:2ch;text-align:center}
-.cd-num.flip{animation:flipNum .28s ease}
-@keyframes flipNum{0%{transform:translateY(0);opacity:1}35%{transform:translateY(-10px);opacity:0}65%{transform:translateY(10px);opacity:0}100%{transform:translateY(0);opacity:1}}
-.cd-label{font-family:'Raleway',sans-serif;font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:#c8c2bb;display:block;font-weight:600}
-.cd-sep{font-size:2rem;color:#c47a7e;opacity:1;flex-shrink:0;width:20px;text-align:center;margin-bottom:1.5rem;animation:sepPulse 2s ease-in-out infinite}
-@keyframes sepPulse{0%,100%{opacity:.6}50%{opacity:1}}
-
-/* ── RSVP ── */
-.rsvp-section{background:linear-gradient(180deg,var(--nuln) 0%,#1c080a 100%);padding:5.5rem 2rem;text-align:center;width:100%}
-.rsvp-inner{max-width:480px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
-.rsvp-question{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,5vw,2.4rem);font-weight:400;font-style:italic;color:#e8e5e0;margin-bottom:2.5rem;line-height:1.55;text-align:center;width:100%}
-.rsvp-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;width:100%}
-.btn{font-family:'Raleway',sans-serif;font-weight:600;font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;padding:1.3rem 2.4rem;border:2px solid;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);background:transparent;position:relative;overflow:hidden}
-.btn-yes{border-color:var(--gold-lt);color:var(--gold-lt)}
-.btn-yes:hover{background:var(--crimson);border-color:var(--crimson);color:#fff}
-.btn-no{border-color:#c8c2bb;color:#c8c2bb}
-.btn-no:hover{background:rgba(200,194,187,.1);color:#fff;border-color:#fff}
-.rsvp-result{margin-top:2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--gold-lt);min-height:2rem;opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
-.rsvp-result.show{opacity:1;transform:translateY(0)}
-
-/* ── FOOTER ── */
-footer{text-align:center;padding:3rem 1.5rem 4.5rem;background:var(--nuln);border-top:1px solid rgba(180,140,100,.15);position:relative}
-footer::before{content:'✦';display:block;font-size:1rem;color:#c47a7e;letter-spacing:.4em;margin-bottom:1.5rem;opacity:1}
-.footer-names{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-style:italic;color:var(--gold-lt);font-weight:400}
-.footer-sub{font-family:'Raleway',sans-serif;font-size:.9rem;letter-spacing:.18em;color:#c8c2bb;text-transform:uppercase;margin-top:.9rem;font-weight:400}
-
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s ease,transform 1s ease}
-.reveal.in-view{opacity:1;transform:none}
-
+.env-cta{font-family:'Raleway',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:.2em;color:var(--gold-lt);text-transform:uppercase;animation:breathe 2.4s ease-in-out infinite,riseIn 1.4s .6s both}
+@keyframes breathe{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 10rem;overflow:hidden}
+.hero-bg{position:absolute;inset:-20%;background:radial-gradient(ellipse at 50% 0%,#3d0f12 0%,transparent 55%),radial-gradient(ellipse at 20% 100%,rgba(85,31,34,.25) 0%,transparent 45%),radial-gradient(ellipse at 80% 80%,rgba(85,31,34,.15) 0%,transparent 40%),var(--nuln);will-change:transform;transition:transform .05s linear}
+.hero-circle{position:absolute;border-radius:50%;border:1px solid rgba(180,140,100,.08);will-change:transform}
+.hc1{width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.hc2{width:750px;height:750px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.hc3{width:1000px;height:1000px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.hero-top-line{display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem;opacity:0;animation:riseIn 1s .4s both}
+.hero-top-line span{display:block;width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
+.hero-top-line span:last-child{background:linear-gradient(to left,transparent,var(--gold))}
+.hero-top-line em{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.4em;color:var(--gold);font-style:normal}
+.hero-pre{font-family:'Raleway',sans-serif;font-weight:400;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-bottom:2rem;opacity:0;animation:riseIn 1s .6s both}
+.hero-names{font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,18vw,10rem);font-weight:300;line-height:.95;color:var(--owl);display:flex;flex-direction:column;align-items:center;opacity:0;animation:namesReveal 1.4s .8s both}
+@keyframes namesReveal{0%{opacity:0;transform:translateY(40px)}70%{opacity:1}100%{opacity:1;transform:translateY(0)}}
+.hero-names em{font-style:italic;color:var(--gold-lt);display:block}
+.ampersand{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(2.5rem,6vw,4rem);color:var(--crimson2);margin:.15em 0;font-weight:400;animation:ampIn 1s 1.2s both}
+@keyframes ampIn{from{opacity:0;transform:scale(.5) rotate(-15deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+.hero-divider{display:flex;align-items:center;gap:1rem;margin:2.5rem 0;opacity:0;animation:riseIn 1s 1.6s both;width:100%;justify-content:center}
+.hero-divider-line{flex:1;max-width:100px;height:1px;background:linear-gradient(to right,transparent,var(--gold))}
+.hero-divider-line:last-child{background:linear-gradient(to left,transparent,var(--gold))}
+.hero-divider-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.hero-date{font-family:'Cinzel',serif;font-size:clamp(1rem,3vw,1.3rem);letter-spacing:.15em;color:var(--gold-lt);font-weight:500;opacity:0;animation:riseIn 1s 1.8s both}
+.hero-sub{font-style:italic;font-size:1.4rem;color:var(--mist);margin-top:.6rem;opacity:0;animation:riseIn 1s 2s both}
+.scroll-hint{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.8rem;opacity:0;animation:scrollHintIn 1s 2.5s both;z-index:2}
+.scroll-hint span{font-family:'Raleway',sans-serif;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--mist);font-weight:400}
+.scroll-mouse{width:26px;height:40px;border:2px solid rgba(180,140,100,.5);border-radius:13px;position:relative;display:flex;justify-content:center}
+.scroll-mouse::before{content:'';position:absolute;top:6px;width:3px;height:8px;background:var(--gold-lt);border-radius:2px;animation:scrollWheel 1.8s ease-in-out infinite}
+@keyframes scrollHintIn{from{opacity:0;transform:translateX(-50%) translateY(24px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+@keyframes scrollWheel{0%{top:6px;opacity:1}100%{top:22px;opacity:0}}
+.section{padding:7rem 2rem;width:100%;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.section-inner{max-width:700px;width:100%;display:flex;flex-direction:column;align-items:center}
+.tag{font-family:'Raleway',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.25em;text-transform:uppercase;color:#e08085;margin-bottom:1.5rem}
+.heading{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4rem);font-weight:300;color:var(--owl);line-height:1.15;margin-bottom:1.5rem}
+.heading em{font-style:italic;color:var(--gold-lt)}
+.rule{width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:0 auto 2.5rem}
+.lead{font-size:1.35rem;font-weight:400;line-height:2;color:var(--mist);font-style:italic;max-width:520px}
+.parallax-band{width:100%;min-height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pb-bg{position:absolute;inset:-30%;will-change:transform;display:flex;align-items:center;justify-content:center}
+.pb-inner{position:relative;z-index:1;text-align:center;padding:3.5rem 2rem;width:100%}
+.band-crimson .pb-bg{background:var(--crimson)}
+.band-crimson .band-text{font-family:'Cinzel',serif;font-size:clamp(.9rem,2.5vw,1.15rem);letter-spacing:.35em;color:#fff;text-transform:uppercase;font-weight:500}
+.cards-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(180,140,100,.12);border:1px solid rgba(180,140,100,.12);width:100%;margin-top:2.5rem;overflow:hidden}
+.card{background:var(--seal);padding:2.5rem 1.5rem;text-align:center;transition:background .35s;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(180,140,100,.06),transparent 70%);opacity:0;transition:opacity .4s}
+.card:hover{background:#3d1a1c}
+.card:hover::after{opacity:1}
+.card-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
+.card-label{font-family:'Raleway',sans-serif;font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;color:#e08085;margin-bottom:.7rem;display:block;font-weight:700}
+.card-value{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:var(--owl);line-height:1.5}
+.card-full{grid-column:1/-1}
+.countdown-box{background:var(--seal);border:1px solid rgba(180,140,100,.12);width:100%;margin-top:2.5rem;padding:3rem 1.5rem;position:relative;overflow:hidden}
+.countdown-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(85,31,34,.3),transparent 60%)}
+.cd-grid{display:flex;justify-content:center;align-items:center;position:relative;z-index:1;margin-top:1rem}
+.cd-unit{display:flex;flex-direction:column;align-items:center;width:80px}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:400;color:var(--gold-lt);line-height:1;position:relative}
+.cd-num::after{content:'';position:absolute;bottom:-6px;left:10%;right:10%;height:1px;background:rgba(180,140,100,.2)}
+.cd-num.flip{animation:flip .3s ease}
+@keyframes flip{0%{opacity:1;transform:translateY(0)}40%{opacity:0;transform:translateY(-12px)}60%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+.cd-lbl{font-family:'Raleway',sans-serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mist);margin-top:.8rem;font-weight:600}
+.cd-dot{font-size:2.5rem;color:var(--crimson2);width:30px;text-align:center;margin-bottom:1.8rem;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:.4}50%{opacity:1}}
+.wish-wall{width:100%;display:flex;flex-direction:column;align-items:center;margin-top:2.5rem}
+.wish-form{display:flex;flex-direction:column;gap:1rem;width:100%;max-width:500px;align-items:center}
+.wish-input{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--owl);background:var(--seal);border:1px solid rgba(180,140,100,.2);padding:1rem 1.2rem;outline:none;resize:none;transition:border-color .3s;width:100%}
+.wish-input::placeholder{color:rgba(200,194,187,.4)}
+.wish-input:focus{border-color:var(--gold)}
+.wish-name{font-family:'Raleway',sans-serif;font-size:1rem;font-weight:400;color:var(--owl);background:var(--seal);border:1px solid rgba(180,140,100,.2);padding:.9rem 1.2rem;outline:none;transition:border-color .3s;width:100%}
+.wish-name::placeholder{color:rgba(200,194,187,.4)}
+.wish-name:focus{border-color:var(--gold)}
+.wish-btn{font-family:'Raleway',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;padding:1.1rem;background:var(--crimson);color:#fff;border:none;cursor:pointer;transition:background .3s;width:100%}
+.wish-btn:hover{background:var(--crimson2)}
+.wish-btn:disabled{opacity:.5;cursor:not-allowed}
+.wishes-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem;width:100%;max-width:500px;align-items:center}
+.wish-card{background:var(--seal);border:1px solid rgba(180,140,100,.12);padding:1.6rem 1.8rem;text-align:center;width:100%;animation:riseIn .6s ease both}
+.wish-card-msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--owl);line-height:1.7}
+.wish-card-name{font-family:'Raleway',sans-serif;font-size:.72rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-top:.8rem;font-weight:600}
+.wish-empty{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--mist);text-align:center;padding:1rem}
+.rsvp-wrap{max-width:480px;width:100%;display:flex;flex-direction:column;align-items:center}
+.rsvp-q{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,5vw,2.5rem);font-weight:300;font-style:italic;color:var(--owl);margin-bottom:2.5rem;line-height:1.5}
+.rsvp-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;width:100%}
+.rbtn{font-family:'Raleway',sans-serif;font-weight:600;font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;padding:1.3rem 2.5rem;border:2px solid;cursor:pointer;background:transparent;transition:all .4s}
+.rbtn-yes{border-color:var(--gold-lt);color:var(--gold-lt)}
+.rbtn-yes:hover{background:var(--crimson);border-color:var(--crimson);color:#fff}
+.rbtn-no{border-color:var(--mist);color:var(--mist)}
+.rbtn-no:hover{background:rgba(200,194,187,.1);color:#fff;border-color:#fff}
+.rsvp-reply{margin-top:2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:var(--gold-lt);opacity:0;transform:translateY(10px);transition:all .7s}
+.rsvp-reply.show{opacity:1;transform:translateY(0)}
+footer{text-align:center;padding:4rem 2rem 5rem;background:var(--nuln);border-top:1px solid rgba(180,140,100,.1);position:relative}
+.footer-diamond{font-size:1rem;color:var(--crimson2);letter-spacing:.5em;margin-bottom:1.8rem;display:block}
+.footer-names{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-style:italic;color:var(--gold-lt);font-weight:300}
+.footer-sub{font-family:'Raleway',sans-serif;font-size:.85rem;letter-spacing:.18em;color:var(--mist);text-transform:uppercase;margin-top:1rem;font-weight:400}
+.footer-heart{font-size:1.5rem;margin-top:1.5rem;display:block;animation:heartbeat 1.5s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 1s ease,transform 1s ease}
+.reveal-left.in{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity 1s ease,transform 1s ease}
+.reveal-right.in{opacity:1;transform:none}
+.dark-section{background:linear-gradient(180deg,var(--nuln) 0%,#1a0608 50%,var(--nuln) 100%)}
 @media(max-width:520px){
-  .details-grid{grid-template-columns:1fr}
-  .cd-block{width:58px}
-  .cd-num{font-size:2.6rem}
-  .cd-sep{width:14px;font-size:1.5rem;margin-bottom:1.3rem}
-  .rsvp-buttons{flex-direction:column;align-items:center}
-  .btn{width:100%;max-width:290px}
-  section{padding:4rem 1.5rem}
+  .envelope{width:260px;height:174px}
+  .env-left{border-bottom-width:87px;border-right-width:130px}
+  .env-right{border-bottom-width:87px;border-left-width:130px}
+  .env-flap{border-left-width:130px;border-right-width:130px;border-top-width:92px}
+  .cards-row{grid-template-columns:1fr}
+  .cd-unit{width:62px}
+  .cd-num{font-size:3rem}
+  .cd-dot{width:20px;font-size:2rem}
+  .rsvp-btns{flex-direction:column;align-items:center}
+  .rbtn{width:100%;max-width:300px}
+  .section{padding:5rem 1.5rem}
 }
 </style>
 </head>
 <body>
-
 <div id="particles"></div>
 <canvas id="confetti-canvas"></canvas>
+
 <div id="party-overlay">
   <div class="party-emoji">🎉</div>
-  <p class="party-title">It's happening!<br/>Sadia & Arbaz<br/>are getting married!</p>
+  <p class="party-title">It's happening!<br/><em>Sadia & Arbaz</em><br/>are getting married!</p>
   <p class="party-sub">4th June 2026 · SK Crown Convention · Warangal</p>
-  <button class="party-close" onclick="document.getElementById('party-overlay').classList.remove('show')">Continue to invite ✦</button>
+  <button class="party-close" onclick="closeParty()">Continue to Invite ✦</button>
 </div>
 
-<!-- ENVELOPE -->
 <div id="envelope-screen">
   <p class="env-label">You have been cordially invited</p>
   <div class="envelope-wrap">
@@ -232,236 +192,368 @@ footer::before{content:'✦';display:block;font-size:1rem;color:#c47a7e;letter-s
   <p class="env-cta">Tap to open</p>
 </div>
 
-<!-- INVITE -->
-<div id="invite">
+<div id="invite" style="opacity:0;transition:opacity 1.4s ease">
   <section class="hero">
-    <div class="hero-ornament">— ✦ —</div>
-    <p class="hero-pre">Together with their families</p>
-    <h1 class="hero-names">
-      <em>Sadia</em>
-      <span class="ampersand">&amp;</span>
-      <em>Arbaz</em>
-    </h1>
-    <div class="hero-divider"></div>
-    <p class="hero-date">THURSDAY · 4TH JUNE 2026 · 8 PM ONWARDS</p>
-    <p class="hero-sub">request the honour of your presence</p>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-chevron"><i></i><i></i><i></i></div>
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-circle hc1"></div>
+    <div class="hero-circle hc2"></div>
+    <div class="hero-circle hc3"></div>
+    <div class="hero-content">
+      <div class="hero-top-line"><span></span><em>The Wedding of</em><span></span></div>
+      <p class="hero-pre">Together with their families</p>
+      <h1 class="hero-names"><em>Sadia</em><span class="ampersand">&amp;</span><em>Arbaz</em></h1>
+      <div class="hero-divider"><div class="hero-divider-line"></div><div class="hero-divider-diamond"></div><div class="hero-divider-line"></div></div>
+      <p class="hero-date">THURSDAY · 4TH JUNE 2026 · 8 PM ONWARDS</p>
+      <p class="hero-sub">request the honour of your presence</p>
     </div>
+    <div class="scroll-hint"><span>Scroll</span><div class="scroll-mouse"></div></div>
   </section>
 
-  <div class="band">
-    <p class="band-text">SK Crown Convention &nbsp;·&nbsp; Warangal, Telangana</p>
+  <div class="parallax-band band-crimson" data-speed="0.4">
+    <div class="pb-bg" id="band1"></div>
+    <div class="pb-inner"><p class="band-text">SK Crown Convention &nbsp;✦&nbsp; Warangal, Telangana</p></div>
   </div>
 
-  <section class="reveal">
-    <span class="section-tag">An Evening to Remember</span>
-    <h2 class="section-title">Join us as we begin<br/><em>our forever</em></h2>
-    <div class="divider"></div>
-    <p class="body-text">
-      Good food. Good people. Great night.<br/><br/>
-      Come celebrate with Sadia & Arbaz<br/>
-      as they make it official —<br/>
-      at one of the most stunning venues in the country,<br/>
-      no less.
-    </p>
+  <section class="section reveal">
+    <div class="section-inner">
+      <p class="tag">An Evening to Remember</p>
+      <h2 class="heading">Come celebrate<br/><em>with us</em></h2>
+      <div class="rule"></div>
+      <p class="lead">Good food. Good people. Great night.<br/><br/>Come celebrate with Sadia &amp; Arbaz as they make it official - at one of the most stunning venues in the city, no less.</p>
+    </div>
   </section>
 
-  <section class="reveal">
-    <span class="section-tag">The Details</span>
-    <h2 class="section-title">Everything<br/><em>you need to know</em></h2>
-    <div class="divider"></div>
-    <div class="details-grid">
-      <div class="detail-card">
-        <span class="detail-icon">🌙</span>
-        <span class="detail-label">Date</span>
-        <span class="detail-value">Thursday<br/>4th June 2026</span>
-      </div>
-      <div class="detail-card">
-        <span class="detail-icon">✨</span>
-        <span class="detail-label">Time</span>
-        <span class="detail-value">8:00 PM<br/>Onwards</span>
-      </div>
-      <div class="detail-card" style="grid-column:1/-1">
-        <span class="detail-icon">🏰</span>
-        <span class="detail-label">Venue</span>
-        <span class="detail-value">SK Crown Convention<br/>Warangal, Telangana</span>
-        <a class="map-link" href="https://maps.google.com/?q=SK+Crown+Convention+Beside+HP+Fuel+Station+Mulugu+Road+Warangal+Telangana+506007" target="_blank">📍 View on Maps ↗</a>
+  <section class="section reveal">
+    <div class="section-inner">
+      <p class="tag">The Details</p>
+      <h2 class="heading">Everything you<br/><em>need to know</em></h2>
+      <div class="rule"></div>
+      <div class="cards-row">
+        <div class="card reveal-left"><span class="card-icon">🌙</span><span class="card-label">Date</span><span class="card-value">Thursday<br/>4th June 2026</span></div>
+        <div class="card reveal-right"><span class="card-icon">✨</span><span class="card-label">Time</span><span class="card-value">8:00 PM<br/>Onwards</span></div>
+        <div class="card card-full reveal"><span class="card-icon">📍</span><span class="card-label">Venue</span><span class="card-value">SK Crown Convention<br/>Warangal, Telangana</span></div>
       </div>
     </div>
   </section>
 
-  <section class="reveal">
-    <span class="section-tag">Counting Down</span>
-    <h2 class="section-title"><em>The wait</em> is almost over</h2>
-    <div class="divider"></div>
-    <div class="countdown-wrap">
-      <div class="countdown-grid">
-        <div class="cd-block">
-          <span class="cd-num" id="cd-days">--</span>
-          <span class="cd-label">Days</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-block">
-          <span class="cd-num" id="cd-hours">--</span>
-          <span class="cd-label">Hours</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-block">
-          <span class="cd-num" id="cd-mins">--</span>
-          <span class="cd-label">Minutes</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-block">
-          <span class="cd-num" id="cd-secs">--</span>
-          <span class="cd-label">Seconds</span>
+  <section class="section dark-section reveal">
+    <div class="section-inner">
+      <p class="tag">Counting Down</p>
+      <h2 class="heading"><em>The wait</em> is almost over</h2>
+      <div class="rule"></div>
+      <div class="countdown-box">
+        <div class="cd-grid">
+          <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Days</span></div>
+          <span class="cd-dot">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Hours</span></div>
+          <span class="cd-dot">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Mins</span></div>
+          <span class="cd-dot">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Secs</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="rsvp-section">
-    <div class="rsvp-inner reveal">
-      <span class="section-tag">RSVP</span>
-      <p class="rsvp-question">Will you be joining us on this special night?</p>
-      <div class="rsvp-buttons">
-        <button class="btn btn-yes" onclick="rsvp('yes')">With joy, I'll be there</button>
-        <button class="btn btn-no" onclick="rsvp('no')">Sadly, I cannot make it</button>
+  <section class="section reveal">
+    <div class="section-inner">
+      <p class="tag">Wish Wall</p>
+      <h2 class="heading">Send your<br/><em>love & wishes</em></h2>
+      <div class="rule"></div>
+      <div class="wish-wall">
+        <div class="wish-form">
+          <input class="wish-name" id="wish-name" type="text" placeholder="Your name" maxlength="40"/>
+          <textarea class="wish-input" id="wish-msg" rows="3" placeholder="Write your wish for Sadia & Arbaz..." maxlength="200"></textarea>
+          <button class="wish-btn" onclick="submitWish()">Send Wish 🌹</button>
+        </div>
+        <div class="wishes-list" id="wishes-list"></div>
       </div>
-      <p class="rsvp-result" id="rsvp-result"></p>
     </div>
-  </div>
+  </section>
+
+  <section class="section dark-section reveal">
+    <div class="section-inner">
+      <p class="tag">RSVP</p>
+      <div class="rsvp-wrap">
+        <p class="rsvp-q">Will you be joining us on this special night?</p>
+        <div class="rsvp-btns">
+          <button class="rbtn rbtn-yes" onclick="rsvp('yes')">With joy, I'll be there</button>
+          <button class="rbtn rbtn-no" onclick="rsvp('no')">Sadly, I cannot make it</button>
+        </div>
+        <p class="rsvp-reply" id="rsvp-reply"></p>
+      </div>
+    </div>
+  </section>
 
   <footer>
+    <span class="footer-diamond">✦ ✦ ✦</span>
     <p class="footer-names">Sadia &amp; Arbaz</p>
-    <p class="footer-sub">4th June 2026 · SK Crown Convention · Warangal</p>
+    <p class="footer-sub">4th June 2026 &nbsp;·&nbsp; SK Crown Convention &nbsp;·&nbsp; Warangal</p>
+    <span class="footer-heart">🌹</span>
   </footer>
 </div>
 
 <script>
-/* ── PETALS ── */
+let opened=false;
+let revealStarted=false;
+let parallaxStarted=false;
+
+function openEnvelope(){
+  if(opened)return;
+  opened=true;
+  document.getElementById('envelope').classList.add('open');
+  setTimeout(()=>{
+    document.getElementById('envelope-screen').classList.add('gone');
+    const inv=document.getElementById('invite');
+    inv.style.opacity='1';
+    initReveal();
+    initParallax();
+  },1200);
+}
+
+function closeParty(){
+  document.getElementById('party-overlay').classList.remove('show');
+}
+
+const replies={
+  yes:["We cannot wait to celebrate with you! 🌹","Your presence means everything to us ✨","See you at SK Crown Convention! 🎉","So excited - saving your spot! 💫"],
+  no:["We'll miss you dearly. Sending love 🌹","You'll be in our hearts on the big night ✨","Wishing you were there - always with us 💫","Thank you for letting us know 🕊️"]
+};
+
+function rsvp(c){
+  const el=document.getElementById('rsvp-reply');
+  const pool=replies[c];
+  el.textContent=pool[Math.floor(Math.random()*pool.length)];
+  el.classList.remove('show');
+  void el.offsetWidth;
+  el.classList.add('show');
+}
+
+async function submitWish(){
+  const nameEl=document.getElementById('wish-name');
+  const msgEl=document.getElementById('wish-msg');
+  const btn=document.querySelector('.wish-btn');
+  const name=nameEl.value.trim();
+  const msg=msgEl.value.trim();
+  if(!name||!msg)return;
+
+  if(!window.wishWallReady){
+    alert('Wish wall is still loading - please try again in a moment.');
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent='Sending... 🌹';
+  try{
+    await window.addWish({name,msg});
+    nameEl.value='';
+    msgEl.value='';
+  }catch(e){
+    console.error(e);
+    alert('Could not save wish - please try again.');
+  }
+  btn.disabled=false;
+  btn.textContent='Send Wish 🌹';
+}
+
+// These must be exposed before Firebase loads, otherwise inline onclick handlers can fail.
+window.openEnvelope=openEnvelope;
+window.closeParty=closeParty;
+window.rsvp=rsvp;
+window.submitWish=submitWish;
+
 (function(){
   const c=document.getElementById('particles');
-  const colors=['#551F22','#7a2428','#8a3030','#3d1010'];
-  for(let i=0;i<24;i++){
-    const p=document.createElement('div');p.className='petal';
-    const s=Math.random()*7+4;
-    p.style.cssText=`left:${Math.random()*110-5}%;width:${s}px;height:${s}px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${Math.random()*16+12}s;animation-delay:${Math.random()*15}s;`;
+  const cols=['#551F22','#7a2428','#8a3030','#3d1010','#6b2020'];
+  for(let i=0;i<30;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    const s=Math.random()*9+4;
+    const isHeart=Math.random()>.7;
+    if(isHeart){
+      p.textContent='🌹';
+      p.style.fontSize=(s*1.8)+'px';
+      p.style.background='none';
+    }else{
+      p.style.width=s+'px';
+      p.style.height=s+'px';
+      p.style.borderRadius='50% 0 50% 0';
+      p.style.background=cols[Math.floor(Math.random()*cols.length)];
+    }
+    p.style.left=Math.random()*110-5+'%';
+    p.style.animationDuration=Math.random()*18+12+'s';
+    p.style.animationDelay=Math.random()*18+'s';
     c.appendChild(p);
   }
 })();
 
-/* ── ENVELOPE ── */
-let opened=false;
-function openEnvelope(){
-  if(opened)return;opened=true;
-  document.getElementById('envelope').classList.add('open');
-  setTimeout(()=>{
-    document.getElementById('envelope-screen').classList.add('gone');
-    document.getElementById('invite').classList.add('visible');
-    initReveal();
-  },1200);
+function initParallax(){
+  if(parallaxStarted)return;
+  parallaxStarted=true;
+  const heroBg=document.getElementById('hero-bg');
+  const bands=[
+    {el:document.getElementById('band1'),speed:.4},
+  ];
+  function onScroll(){
+    const sy=window.scrollY;
+    if(heroBg)heroBg.style.transform=`translateY(${sy*.35}px)`;
+    bands.forEach(b=>{
+      if(!b.el)return;
+      const rect=b.el.closest('.parallax-band').getBoundingClientRect();
+      b.el.style.transform=`translateY(${-rect.top*b.speed*.4}px)`;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
 }
 
-/* ── SCROLL REVEAL ── */
 function initReveal(){
-  const obs=new IntersectionObserver(
-    entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view')}),
-    {threshold:.12}
-  );
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  if(revealStarted)return;
+  revealStarted=true;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting)e.target.classList.add('in');
+    });
+  },{threshold:.1});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
 }
 
-/* ── COUNTDOWN — 4 June 2026 20:00 IST = UTC 14:30 ── */
-const WEDDING_UTC=Date.UTC(2026,5,4,14,30,0);
+const TARGET=Date.UTC(2026,5,4,14,30,0);
 let partyFired=false;
-
-function flipEl(id,val){
+function setNum(id,val){
   const el=document.getElementById(id);
   const str=String(val).padStart(2,'0');
   if(el.textContent===str)return;
-  el.classList.remove('flip');void el.offsetWidth;
-  el.textContent=str;el.classList.add('flip');
+  el.classList.remove('flip');
+  void el.offsetWidth;
+  el.textContent=str;
+  el.classList.add('flip');
 }
 
 function tick(){
-  const now=Date.now();
-  let diff=WEDDING_UTC-now;
+  let diff=TARGET-Date.now();
   if(diff<=0){
-    flipEl('cd-days',0);flipEl('cd-hours',0);flipEl('cd-mins',0);flipEl('cd-secs',0);
-    if(!partyFired){partyFired=true;launchParty();}
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(id=>setNum(id,0));
+    if(!partyFired){
+      partyFired=true;
+      launchParty();
+    }
     return;
   }
   const d=Math.floor(diff/86400000);diff-=d*86400000;
   const h=Math.floor(diff/3600000);diff-=h*3600000;
   const m=Math.floor(diff/60000);diff-=m*60000;
   const s=Math.floor(diff/1000);
-  flipEl('cd-days',d);flipEl('cd-hours',h);flipEl('cd-mins',m);flipEl('cd-secs',s);
+  setNum('cd-d',d);
+  setNum('cd-h',h);
+  setNum('cd-m',m);
+  setNum('cd-s',s);
 }
-tick();setInterval(tick,1000);
+tick();
+setInterval(tick,1000);
 
-/* ── PARTY POPPER ── */
 function launchParty(){
   const canvas=document.getElementById('confetti-canvas');
   canvas.style.display='block';
-  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
   document.getElementById('party-overlay').classList.add('show');
-
   const ctx=canvas.getContext('2d');
   const pieces=[];
-  const colors=['#D4B98A','#551F22','#C4C1B8','#7a2428','#B89A6A','#fff','#e8c97a'];
-  const shapes=['rect','circle','ribbon'];
-
-  for(let i=0;i<160;i++){
+  const cols=['#D4B98A','#551F22','#C4C1B8','#7a2428','#B89A6A','#fff','#e8c97a','#f5c0c0'];
+  for(let i=0;i<200;i++){
     pieces.push({
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height-canvas.height,
-      w:Math.random()*10+4,
-      h:Math.random()*14+5,
-      color:colors[Math.floor(Math.random()*colors.length)],
-      shape:shapes[Math.floor(Math.random()*shapes.length)],
-      vx:(Math.random()-.5)*4,
-      vy:Math.random()*4+2,
-      rot:Math.random()*360,
-      vr:(Math.random()-.5)*8,
-      alpha:1
+      x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,
+      w:Math.random()*10+4,h:Math.random()*14+5,
+      color:cols[Math.floor(Math.random()*cols.length)],
+      vx:(Math.random()-.5)*5,vy:Math.random()*5+2,
+      rot:Math.random()*360,vr:(Math.random()-.5)*10,alpha:1
     });
   }
-
   let frame=0;
   function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
     let alive=false;
     pieces.forEach(p=>{
-      p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=.06;
-      if(p.y<canvas.height+40){alive=true}
-      if(p.y>canvas.height-100)p.alpha=Math.max(0,p.alpha-.02);
-      ctx.save();ctx.globalAlpha=p.alpha;
-      ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
+      p.x+=p.vx;
+      p.y+=p.vy;
+      p.rot+=p.vr;
+      p.vy+=.07;
+      if(p.y<canvas.height+40)alive=true;
+      if(p.y>canvas.height-80)p.alpha=Math.max(0,p.alpha-.025);
+      ctx.save();
+      ctx.globalAlpha=p.alpha;
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.rot*Math.PI/180);
       ctx.fillStyle=p.color;
-      if(p.shape==='circle'){ctx.beginPath();ctx.arc(0,0,p.w/2,0,Math.PI*2);ctx.fill();}
-      else if(p.shape==='ribbon'){ctx.beginPath();ctx.ellipse(0,0,p.w/2,p.h/2,0,0,Math.PI*2);ctx.fill();}
-      else{ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);}
+      ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
       ctx.restore();
     });
     frame++;
-    if(alive&&frame<400)requestAnimationFrame(draw);
-    else{canvas.style.display='none';}
+    if(alive&&frame<500)requestAnimationFrame(draw);
+    else canvas.style.display='none';
   }
   draw();
 }
 
-/* ── RSVP ── */
-const msgs={
-  yes:["We cannot wait to celebrate with you! 🌹","Your presence means everything to us ✨","See you at Falaknuma Palace! 🏰","We're saving your spot — so excited! 💫"],
-  no: ["We'll miss you dearly. Sending love 🌹","You'll be in our hearts on the big night ✨","Wishing you were there — always 💫","Thank you for letting us know, always with us in spirit 🕊️"]
+const firebaseConfig={
+  apiKey:"AIzaSyAGeMg31La_JlDnuPCBpOZgtVzIb-vcfzU",
+  authDomain:"sadia-arbaz-invite.firebaseapp.com",
+  projectId:"sadia-arbaz-invite",
+  storageBucket:"sadia-arbaz-invite.firebasestorage.app",
+  messagingSenderId:"57488384032",
+  appId:"1:57488384032:web:c844675386c682ba1c9c45"
 };
-function rsvp(choice){
-  const el=document.getElementById('rsvp-result');
-  el.textContent=msgs[choice][Math.floor(Math.random()*msgs[choice].length)];
-  el.classList.remove('show');void el.offsetWidth;el.classList.add('show');
+
+async function initWishWall(){
+  const list=document.getElementById('wishes-list');
+  try{
+    const [{initializeApp},firestore]=await Promise.all([
+      import('https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/11.7.1/firebase-firestore.js')
+    ]);
+    const fbApp=initializeApp(firebaseConfig);
+    const db=firestore.getFirestore(fbApp);
+    const wishesCol=firestore.collection(db,'wishes');
+
+    window.addWish=({name,msg})=>firestore.addDoc(wishesCol,{name,msg,ts:firestore.serverTimestamp()});
+    window.wishWallReady=true;
+
+    const q=firestore.query(wishesCol,firestore.orderBy('ts','desc'));
+    firestore.onSnapshot(q,snapshot=>{
+      if(snapshot.empty){
+        list.innerHTML='<p class="wish-empty">Be the first to leave a wish 🌹</p>';
+        return;
+      }
+      list.innerHTML='';
+      snapshot.forEach(doc=>{
+        const w=doc.data();
+        const card=document.createElement('div');
+        card.className='wish-card';
+        card.innerHTML=`<p class="wish-card-msg">"${escapeHtml(w.msg||'')}"</p><p class="wish-card-name">- ${escapeHtml(w.name||'Guest')}</p>`;
+        list.appendChild(card);
+      });
+    },err=>{
+      console.error(err);
+      list.innerHTML='<p class="wish-empty">Wish wall is temporarily unavailable.</p>';
+    });
+  }catch(e){
+    console.error('Wish wall failed to load:',e);
+    list.innerHTML='<p class="wish-empty">Wish wall is temporarily unavailable.</p>';
+  }
 }
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g,char=>({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#039;'
+  }[char]));
+}
+
+initWishWall();
 </script>
 </body>
 </html>
